@@ -43,7 +43,7 @@ function CheckForUpdates()
         	echo "/save >> "${DATADIR}/${GALAXY}/commands.txt"
         	sleep 30
         	cnt="3"
-        	while [ $(expr $(date +%s` - `stat -L --format %Y ""${DATADIR}"/index")) -lt 120 -a ! -z "$(pidof '${SERVERPROCESS}')" -a "$cnt" -gt 0 ]
+        	while [ $(expr $(date +%s` - `stat -L --format %Y "${DATADIR}/${GALAXY}/index")) -lt 120 -a ! -z "$(pidof '${SERVERPROCESS}')" -a "$cnt" -gt 0 ]
         	do
         	    sleep 1m
         	    let cnt=$cnt-1
