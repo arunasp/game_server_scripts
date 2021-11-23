@@ -81,7 +81,7 @@ mkdir -p "$SERVERDIR"/Logs
 [ $# -lt 1 ] && \
 while sleep 10
 do
-    if [ -z "$(pidof avorion_server.x86_64)" -a -z "$(pidof steamcmd)" -a ! -f "$SERVERDIR/Logs/updateinprogress.dat" ]
+    if [ -z "$(pidof "${SERVERPROCESS}")" -a -z "$(pidof steamcmd)" -a ! -f "$SERVERDIR/Logs/updateinprogress.dat" ]
     then
 	echo "----------------- $(date) -----------------" >> "$SERVERDIR"/Logs/startup.log
 	cd "$SERVERDIR"
